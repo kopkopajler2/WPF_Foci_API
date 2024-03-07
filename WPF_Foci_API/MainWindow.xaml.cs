@@ -19,18 +19,6 @@ namespace WPF_Foci_API
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		/*
-		 * {
-		"hazai": "hazai 1",
-		"vendeg": "vendeg 1",
-		"hazaipont": 76,
-		"vendegpont": 42,
-		"datum": 1709811587,
-		"helyszin": "helyszin 1",
-		"id": "1"
-		}
-		 */
-
 		ObservableCollection<Eredmeny> eredmenyek;
 		HttpClient client = new HttpClient();
 		public MainWindow()
