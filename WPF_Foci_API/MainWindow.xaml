@@ -1,0 +1,101 @@
+﻿<Window x:Class="WPF_Foci_API.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Foci_API"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ScrollViewer Grid.Row="0">
+                <ListView x:Name="listViewMatches">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <WrapPanel>
+                                    <TextBlock Text="Hazai: "/>
+                                    <TextBlock Text="{Binding hazai}" FontWeight="Bold"/>
+                                    <TextBlock Text=" - "/>
+                                    <TextBlock Text="Vendég: "/>
+                                    <TextBlock Text="{Binding vendeg}" FontWeight="Bold"/>
+                                    <TextBlock Text=" - "/>
+                                    <TextBlock Text="Hazai pontok: "/>
+                                    <TextBlock Text="{Binding hazaipont}"/>
+                                    <TextBlock Text=" - "/>
+                                    <TextBlock Text="Vendég pontok: "/>
+                                    <TextBlock Text="{Binding vendegpont}"/>
+                                    <TextBlock Text=" - "/>
+                                    <TextBlock Text="Dátum: "/>
+                                    <TextBlock Text="{Binding datum}"/>
+                                    <TextBlock Text=" - "/>
+                                    <TextBlock Text="Helyszín: "/>
+                                    <TextBlock Text="{Binding helyszin}"/>
+                                </WrapPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollViewer>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Bottom">
+                <Button x:Name="btLeker" Content="Lekérés" Width="100" Height="30" Margin="5" Click="btLeker_Click"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <Label Content="Hazai csapat:"/>
+                <TextBox x:Name="tbHazai" Width="120"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <Label Content="Vendég csapat:"/>
+                <TextBox x:Name="tbVendeg" Width="120"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                <Label Content="Hazai pontok:"/>
+                <TextBox x:Name="tbHazaipont" Width="30"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="3" Orientation="Horizontal">
+                <Label Content="Vendég pontok:"/>
+                <TextBox x:Name="tbVendegpont" Width="30"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="4" Orientation="Horizontal">
+                <Label Content="Dátum:"/>
+                <TextBox x:Name="tbDatum" Width="122"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="5" Orientation="Horizontal">
+                <Label Content="Helyszín:"/>
+                <TextBox x:Name="tbHelyszin" Width="100"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="6" Orientation="Horizontal">
+                <Button x:Name="btHozzaad" Content="Hozzáad" Width="100" Height="30" Margin="5" Click="btHozzaad_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
